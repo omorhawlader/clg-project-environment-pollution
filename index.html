@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="./environment pollution/fabiconIcon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+    <title>Enviromental Polluction And Solve</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DynaPuff&family=Nerko+One&family=Poppins:wght@500;600;800&display=swap');
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            color: #666666;
+
+
+        }
+
+        :root {
+            --blue: #737CCF;
+            --white: #fff;
+            --light-white: #aaa;
+            --black: #3d3d3d;
+            --light-bg: #4b4b4b;
+            --green: #00E77F;
+
+        }
+
+        ::selection {
+            color: var(--blue);
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            background-color: #FFDEE9;
+            position: relative;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            background-image: linear-gradient(334deg, #FFDEE9 0%, #B5FFFC 100%);
+            background-repeat: no-repeat;
+        }
+
+        html,
+        body {
+            width: 100%;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: max-content;
+            position: sticky;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 10000;
+
+
+        }
+
+        header h1 {
+            margin-left: clamp(8rem, 5vw, 15rem);
+
+        }
+
+        header h1 img {
+            width: 80px;
+            /* font-weight: 900; */
+            height: 80px;
+        }
+
+        header ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            margin-right: clamp(8rem, 5vw, 15rem);
+        }
+
+        header ul li {
+            padding: 0;
+            margin: 0;
+        }
+
+        header ul li a {
+            display: block;
+            padding: 1rem;
+            color: rgba(100, 148, 237, 0.7);
+            text-shadow: 4px 4px 8px rgba(100, 148, 237, 0.282);
+            text-decoration: none;
+        }
+
+        header ul li a:hover {
+            color: gray;
+        }
+
+        .wrapper {
+            position: relative;
+            overflow: hidden;
+            padding: 0;
+        }
+
+        .e {
+            position: relative;
+            /* overflow: hidden; */
+        }
+
+        .e div {
+            position: absolute;
+            top: 2%;
+
+        }
+
+        .e h4 {
+            position: relative;
+            padding: 15px;
+            color: cornflowerblue;
+            /* display: inline-block; */
+            /* font-weight: 100; */
+            font-size: 2vw;
+            z-index: 100;
+            /* color: cornflowerblue; */
+            text-transform: uppercase;
+        }
+
+        .textStyle {
+            position: relative;
+            padding: 15px;
+            color: #252839;
+            color: transparent;
+            display: inline-block;
+            /* font-weight: 100; */
+            font-size: 3.5vw;
+            -webkit-text-stroke: 0.1vw #383d52;
+            z-index: 100;
+            /* color: cornflowerblue; */
+            text-transform: uppercase;
+        }
+
+        .textStyle::before {
+            content: attr(data-text);
+
+            padding: 15px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+            color: cornflowerblue;
+            -webkit-text-stroke: 0vw #383d52;
+            /* border-right: 2px solid #01fe87; */
+            overflow: hidden;
+            animation: animate 6s linear infinite;
+        }
+
+        @keyframes animate {
+
+            0%,
+            10%,
+            100% {
+                width: 0;
+            }
+
+            70%,
+            90% {
+                width: 100%;
+
+            }
+        }
+
+        .wrapper::before {
+            display: block;
+            content: "";
+            padding-top: 56.25%;
+        }
+
+        .wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .down-up {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            width: 100vw;
+            height: max-content;
+            padding: 1rem 2rem;
+            background-image: linear-gradient(334deg, #FFDEE9 0%, #B5FFFC 100%);
+            background-repeat: no-repeat;
+        }
+
+        .down-up .content {
+            flex-basis: 50%;
+            line-height: 1.50rem;
+            letter-spacing: .9px;
+        }
+
+        .down-up .content h1 {
+            margin: 3rem 0rem 0 8rem;
+            color: transparent;
+
+
+            -webkit-text-stroke: 0.3vw transparent;
+            -webkit-background-clip: text;
+
+        }
+
+        .down-up ol {
+            font-family: 'Noto Sans', sans-serif;
+            padding: 10px;
+        }
+
+        .down-up ol h3 {
+            color: rgba(100, 148, 237, 0.857);
+            font-family: 'Noto Sans', sans-serif;
+            font-size: 1.5vw;
+            /* text-shadow:1px 1px 8px black; */
+        }
+
+        .down-up ol h6 {
+            color: rgba(100, 148, 237, 0.857);
+            font-weight: bold;
+            font-size: 1.2rem;
+            padding: 8px;
+            margin-bottom: 1px;
+        }
+
+        .down-up ol li {
+            text-shadow: 4px 4px 8px rgba(100, 148, 237, 0.282);
+        }
+
+        .down-up ol li ol {
+            padding-left: 4rem;
+        }
+
+        .down-up img {
+            width: 600px;
+            height: 600px;
+            align-self: center;
+            animation: up-down 2s ease-in-out infinite alternate-reverse both;
+        }
+
+        @keyframes up-down {
+            0% {
+                transform: translateY(-15px);
+            }
+
+            100% {
+                transform: translateY(15px);
+            }
+        }
+
+        video {
+            opacity: 0.9;
+        }
+
+        .raincontainer {
+            position: relative;
+            left: 50%;
+            animation: move 60s linear infinite alternate both;
+
+        }
+
+        @keyframes move {
+            0% {
+                left: 0%;
+            }
+
+            50% {
+                left: 50%;
+            }
+
+            100% {
+                left: 100%;
+            }
+        }
+
+        .couldRain {
+            position: relative;
+            left: 2rem;
+            top: 2rem;
+            width: 140px;
+            height: 50px;
+            background-color: #fff;
+            border-radius: 100px;
+        }
+
+        .couldRain::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #fff;
+            border-radius: 50%;
+            box-shadow: 40px 0 0 10px #fff;
+        }
+
+        .rain {
+            position: relative;
+            display: flex;
+
+            z-index: 3000;
+            padding: 0 20px;
+        }
+
+        .rain span {
+            position: relative;
+            left: 15px;
+            width: 10px;
+            height: 10px;
+            background-color: #fff;
+            margin: 0 2px;
+            border-radius: 50%;
+            animation: animateRain 5s linear infinite;
+            animation-duration: calc(15s / var(--i));
+            transform-origin: bottom;
+        }
+
+        @keyframes animateRain {
+            0% {
+                transform: translateY(0) scale(1);
+            }
+
+            70% {
+                transform: translateY(500px) scale(1);
+            }
+
+            100% {
+                transform: translateY(600px) scale(0);
+            }
+
+        }
+
+        marquee {
+            font-family: "Poppins", 'Nerko One', 'DynaPuff', cursive;
+            width: 80%;
+            font-size: 1.2rem;
+            color: rgba(100, 148, 237, 0.857);
+            color: var(--light-white);
+            text-shadow: 4px 4px 8px rgba(100, 148, 237, 0.282);
+        }
+
+        marquee span {
+            color: var(--light-bg);
+        }
+
+        footer {
+            margin-top: -10px;
+            width: 100vw;
+            background-color: #a2d9ff;
+            background-image: linear-gradient(334deg, #FFDEE9 0%, #B5FFFC 100%);
+            background-repeat: no-repeat;
+            height: max-content;
+            position: relative;
+            font-size: 1.2rem;
+            align-items: center;
+            font-family: 'Nerko One', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+
+        }
+
+        footer h1 {
+            /* border: 1px; */
+            font-size: 1rem;
+            text-align: center;
+            color: var(--light-bg);
+        }
+
+        footer a {
+            text-decoration: none;
+            text-align: center;
+            color: var(--light-white);
+
+        }
+
+        footer a:hover {
+            color: cornflowerblue;
+        }
+
+        footer a i:hover {
+            color: red;
+        }
+
+        footer i {
+            color: var(--light-white);
+        }
+    </style>
+
+</head>
+
+<body>
+    <marquee behavior="scroll" direction="left" scrollamount="5">
+        <span>&#8220;</span> 44th National Science and Technology Week and 7th Science Olympiad 2022 at Alamdanga
+        Upazila level <span>&#8221;</span>
+    </marquee>
+
+    <header>
+
+
+        <div class="raincontainer">
+            <div class="couldRain"></div>
+            <div class="rain">
+                <span style="--i:11"></span>
+                <span style="--i:12"></span>
+                <span style="--i:10"></span>
+                <span style="--i:14"></span>
+                <span style="--i:19"></span>
+                <span style="--i:16"></span>
+                <span style="--i:20"></span>
+                <span style="--i:18"></span>
+                <span style="--i:13"></span>
+                <span style="--i:17"></span>
+            </div>
+        </div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#air">Air Pollution</a></li>
+            <li><a href="#problem">pollution Problems</a></li>
+            <li><a href="./School Project/index.html" target="_blank">about our collage</a></li>
+            <li><a href="./aboutme.html" target="_blank">about me</a></li>
+        </ul>
+    </header>
+
+    <div class="down-up " data-aos="zoom-in-up" data-aos-duration="4000">
+
+        <div class="content">
+            <h1 class="textStyle" data-text="Volunteering">Volunteering</h1>
+            <ol>
+                <h3>here some Mental Health Benefits of Volunteering</h3>
+                <li>
+                    <h6>Reduces Stress</h6>
+                    Whether we are working with adults, children or pets, a meaningful connection can take our mind off
+                    our worries when we put our attention on someone or something else. The richer the experience, the
+                    more we feel satisfied with giving of our time and talents, and that results in improved mood and
+                    less stress.
+                </li>
+                <li>
+                    <h6>Combats Depression</h6>
+                    Volunteering can keep the mind distracted from a destructive habit like negative thinking or being
+                    overly critical (especially of oneself). It can also increase motivation by providing a sense of
+                    accomplishment. We think, “If I can do this, what else is possible?”
+                </li>
+                <li>
+                    <h6>Prevents Feelings of Isolation</h6>
+                    While volunteering, we can also make new friends growing our social network and possibly even our
+                    professional one. Picking an activity that we enjoy gives us a higher chance of meeting people who
+                    share our values and worldview. Like-minded, like-hearted people come together over common
+                    interests. Whether it,s building a community garden, campaigning for specific political movement or
+                    giving tours as a museum docent, the key is to show up with some consistency and warmly introducing
+                    ourselves.
+                </li>
+
+            </ol>
+
+        </div>
+
+
+        <img src="./Volunteering Customizable Cartoon Illustrations _ Bro Style.png" alt="">
+
+
+    </div>
+    <div class="down-up" data-aos="fade-left">
+        <img src="./Upgrade Customizable Cartoon Illustrations _ Bro Style.png" alt="">
+
+        <div class="content">
+            <h1 class="textStyle" data-text="Planting">Planting <span>Trees</span></h1>
+            <ol>
+                <h3>here some Benefits of Planting Trees</h3>
+                <li>
+                    <h6>Social Benefits</h6>
+                    <ol type="i">
+                        <li>Trees make life nicer. It has been shown that spending time among trees and green spaces
+                            reduces the amount of stress that we carry around with us in our daily lives.</li>
+                        <li>Hospital patients have been shown to recover from surgery more quickly when their hospital
+                            room offered a view of trees.</li>
+                        <li>Children have been shown to retain more of the information taught in schools if they spend
+                            some of their time outdoors in green spaces.</li>
+                    </ol>
+                </li>
+                <li>
+                    <h6>Communal Benefits</h6>
+                    <ol type="i">
+                        <li>Even though you may own the trees on your property your neighbors may benefit from them as
+                            well.</li>
+                        <li>Through careful planning trees can be an asset to your entire community.</li>
+                        <li>Tree lined streets have a traffic calming effect, traffic moves more slowly and safely.</li>
+                    </ol>
+                </li>
+                <li>
+                    <h6>Environmental Benefits</h6>
+                    <ol type="i">
+                        <li>Trees give off oxygen that we need to breathe.</li>
+                        <li>Trees reduce the amount of storm water runoff, which reduces erosion and pollution in our
+                            waterways and may reduce the effects of flooding.</li>
+                        <li>Many species of wildlife depend on trees for habitat. Trees provide food, protection, and
+                            homes for many birds and mammals.</li>
+                    </ol>
+                </li>
+            </ol>
+
+        </div>
+    </div>
+    <div class="down-up" data-aos="fade-right">
+
+
+        <div class="content">
+            <h1 class="textStyle" id="air" data-text="Air">Air <span>Pollution</span></h1>
+            <ol>
+                <h3>Health Benefits of Air Pollution Reduction</h3>
+                <li>
+                    <h6>United States</h6>
+                    <ol type="i">
+                        <li>In the United States, concerns about air pollution led to the Clean Air Act of 1970 and its
+                            amendments. The Clean Air Act, as it is now called, after further amendments in 1977 and
+                            1990, has been heralded as one of the most effective public health policies of all time in
+                            the United States (7).</li>
+                        <li> Emissions of the major pollutants (particulate matter [PM], sulfur oxides, nitrogen oxides,
+                            carbon monoxide, volatile organic compounds, and lead) were reduced by 73% between 1990 and
+                            2015 while the U.S. gross domestic product grew by more than 250% (8).</li>
+                        <li>The U.S. Environmental Protection Agency (EPA) determined that the monetized health benefits
+                            of the Clean Air Act exceeded the implementation costs by a factor of 32:1 (6).</li>
+                    </ol>
+                </li>
+                <li>
+                    <h6>Asia</h6>
+                    <ol type="i">
+                        <li>The pollution problems of India are daunting, with urban population growth of 31.8% and
+                            overall population growth of 17.6% between 2001 and 2011.</li>
+                        <li>Its development boom and 35 cities approaching or exceeding a population of 1 million have
+                            intensified the demand for energy. The national government, as well as several cities, have
+                            put into place a broad range policies to halt pollution and expand green space (22).</li>
+                        <li> Examples of the interventions include developing and monitoring air pollution standards,
+                            emissions testing, travel restrictions, increased taxes on and removal of subsidies from
+                            polluting sources, increased use of clean energy, and restriction of burning biomass fuels
+                            (23, 24). Online media coverage of air pollution has increased awareness and is a basis for
+                            ongoing advocacy (23).</li>
+                    </ol>
+                </li>
+                <li>
+                    <h6>Africa</h6>
+                    <ol type="i">
+                        <li>Similar problems of population growth, urbanization, and industrialization make air
+                            pollution a major challenge in Africa. A lack of data and information on air quality has
+                            prevented the implementation of national policies in many regions (25).</li>
+                        <li>However, there is increasing recognition of the need to implement and evaluate the impact of
+                            such policies, particularly through partnerships with global agencies, including the United
+                            Nations Environment Programme (26)</li>
+                        <li> Many national and local programs are in place to reduce indoor air pollution (27).</li>
+                    </ol>
+                </li>
+            </ol>
+
+        </div>
+        <img src="./My project-air-pollution.png" alt="">
+    </div>
+    <div class="down-up" data-aos="zoom-up">
+        <img src="./Nature Customizable Cartoon Illustrations _ Bro Style.png" alt="">
+
+        <div class="content">
+
+            <h1 class="textStyle" id="problem" data-text="Pollution">Pollutions<span
+                    style="font-size: 1.8rem;">Problems?</span></h1>
+            <ol>
+                <h3>Ways to Solve Environmental pollution Problems</h3>
+                <li>
+                    <h6>Replace disposable items with reusable</h6>
+                    <ol type="i">
+                        <li>Carry your own reusable cup or water bottle</li>
+                        <li>Use airtight, reusable food containers instead of sandwich bags and plastic wrap</li>
+                        <li>Pack a waste-free lunch: carry your utensils, cloth napkin, and containers in a reusable
+                            lunch bag</li>
+                        <li>Bring your own bags to the grocery store</li>
+                        <li>Consider buying bulk containers of your preferred beverages and refilling a reusable bottle,
+                            instead of buying individually packaged drinks</li>
+                        <li>Use rechargeable batteries</li>
+                    </ol>
+                </li>
+                <li>
+                    <h6>Pass on paper</h6>
+                    <ol type="i">
+                        <li>Join a library instead of buying books or buy a Kindle</li>
+                        <li>Print as little as possible; and if you must, print on both sides</li>
+                        <li>Wrap gifts in fabric and tie with ribbon; both are reusable and prettier than paper and
+                            sticky-tape</li>
+                        <li>Stop using paper towels and incorporate washable cloths</li>
+                    </ol>
+                </li>
+                <li>
+                    <h6>Conserve water & electricity</h6>
+                    <ol type="i">
+                        <li>Turn the sink water off when brushing your teeth</li>
+                        <li>Water the lawn in the morning or evening; cooler air causes less evaporation</li>
+                        <li>Switch off anything that uses electricity when not in use (lights, televisions, computers,
+                            printers, etc.)</li>
+                        <li>Unplug devices when possible; even when an appliance is turned off, it may still use power
+                        </li>
+                        <li>Remove chemicals inside of the house; research companies that use plant-derived ingredients
+                            for their household cleaning products</li>
+                        <li>Remove chemicals outside of the house; use eco-friendly pesticides and herbicides that won't
+                            contaminate groundwater</li>
+                        <li>Consider signing up for a renewable energy producer that uses 100% renewable energy to power
+                            homes</li>
+                    </ol>
+                </li>
+            </ol>
+
+        </div>
+
+    </div>
+    <!-- playsinline  -->
+    <div class="wrapper" data-aos="zoom-in-up">
+        <video class="rain" controls loop poster="./AboutUsResourses/coronavirus.jpg">
+            <source src="./Coronavirus Animation_ High Impact Demonstrates How COVID-19 Impacts the Body(1080P_HD).mp4"
+                type="video/mp4">
+    </div>
+    <div class="e" data-aos="fade">
+        <div>
+            <h2 class="textStyle" data-text="environment pollution">environment<br>pollution</h2>
+            <h4>and its effect<br>can damage<br>out beautyfull earth
+            </h4>
+        </div>
+
+        <video class="earth" playsinline autoplay muted loop>
+            <source src="./Earth - 27168.mp4" type="video/mp4">
+        </video>
+    </div>
+    <!-- --------------- footer -------------------  -->
+    <footer>
+
+
+        <a href="http://alamdanga.chuadanga.gov.bd/" target="_blank"> <i class="fa fa-arrow-right"
+                aria-hidden="true"></i>Bangladesh National Information Broadcasting</i></a>
+        <a href="http://alamdanga.chuadanga.gov.bd/" target="_blank"> <i class="fa fa-arrow-right"
+                aria-hidden="true"></i>Digital Bangladesh</i></a>
+        <a href="./Project/index.html" target="_blank"> <i class="fa fa-arrow-right" aria-hidden="true"></i>Our Bangla
+            Website</i></a>
+        <h1><i class="fa fa-copyright">opy Right-2022</i></h1>
+
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            offset: 360, // offset (in px) from the original trigger point
+            duration: 1000,
+        });
+    </script>
+
+</body>
+
+</html>

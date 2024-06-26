@@ -1,0 +1,55 @@
+.home {
+
+    margin-top: 7rem;
+    height: 95vh;
+}
+
+.home .col-div {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+
+    gap: 1.6rem;
+
+}
+
+.home .col-div .left-col {
+    flex: 1 1 40rem;
+    text-align: center;
+}
+
+.home .col-div .right-col {
+    flex: 1 1 40rem;
+}
+
+.home .col-div .right-col img {
+    width: clamp(350px, 100%, 450px);
+    
+
+}
+
+.home .col-div .left-col h2 {
+    margin-bottom: 1rem;
+    font-size: 10rem;
+    color: var(--white);
+    line-height: 1;
+}
+
+.home .col-div .left-col h2 span {
+    color: var(--blue);
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 1rem;
+    border-radius: 5rem;
+    background-color: var(--light-bg);
+    cursor: pointer;
+    color: var(--white);
+    font-size: 1.8rem;
+    padding: 1rem 3rem;
+    margin-bottom: 2rem;
+}
+.btn:hover{
+    color: var(--green);
+}
